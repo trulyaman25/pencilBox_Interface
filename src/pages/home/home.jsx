@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import LandingBackdrop from '/landingBackground.jpg';
 import CustomPortrait from '/products/custom_photo/Custom_Photo_1.jpg';
+import productsData from '../../data/products.json';
 
 function Home() {
     
@@ -45,7 +46,7 @@ function Home() {
                     </div>
                 </div>
 
-                <div id="custom-portrait" className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16 transition-all ease-in-out">
+                <div id="customPortrait_Section" className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16 transition-all ease-in-out">
                     <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-between items-center">
                         <div className="h-full sm:w-[500px] lg:w-[50%] flex flex-col justify-center items-center sm:items-start mt-10 sm:mt-20">
                             <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-2 xl:mb-4"> Handcrafted </h1>
@@ -53,7 +54,7 @@ function Home() {
 
                             <p className="text-sm xl:text-lg text-center sm:text-start font-Albula-Regular text-gray-600">
                                 Turn your cherished moments into timeless works of art. 
-                                <span className="font-Albula-SemiBold text-[#43806c]"> Sahil</span>, creates 
+                                <span className="font-Albula-SemiBold text-[#43806c] hover:cursor-pointer"> Sahil</span>, creates 
                                 stunning handmade portraits, capturing every detail with precision and passion.  
                                 Upload your photo, choose your style, and let us craft a masterpiece for you.
                             </p>
@@ -66,6 +67,31 @@ function Home() {
                         <div className="max-w-[500px] h-full lg:w-[375px] lg:h-fit xl:w-[500px] xl:h-full">
                             <img src={CustomPortrait} alt="Custom Portrait" className="w-full h-full rounded-3xl object-cover shadow-lg"/>
                         </div>
+                    </div>
+                </div>
+
+                <div className='w-full p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16 bg-[#43806c]'>
+                    <div className='text-3xl lg:text-4xl xl:text-5xl font-Albula-Heavy text-white text-center'>
+                        Experience the Art of Exotic Portraits!
+                    </div>
+                </div>
+
+                <div id="products" className="w-full min-h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16 transition-all ease-in-out">
+                    <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+                    {productsData.products.map((product) => (
+                            <div key={product.id} className="group relative bg-white overflow-hidden transition-all hover:cursor-pointer" >
+                                <div className='w-full max-h-[400px] overflow-hidden'>
+                                    <img src={product.image} alt={product.name} className="w-full max-h-[400px] object-cover transition-transform duration-300 group-hover:scale-102" />
+                                </div>
+
+                                <h1 className='font-GoogleSans-Medium text-xl mt-7'>{product.name}</h1>
+                                
+                                <div>
+                                    <span className='font-GoogleSans-Medium text-gray-400 line-through mr-4'>₹ {product.actualPrice}</span>
+                                    <span className='font-GoogleSans-Medium text-gray-800'>₹ {product.currentPrice}</span>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </main>
