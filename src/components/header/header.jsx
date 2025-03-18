@@ -22,17 +22,19 @@ function Header() {
     };
 
     const NavigationPanel = () => (
-        <div className="fixed top-0 left-0 w-full h-full bg-amber-100 z-50 flex flex-col items-center justify-center space-y-6">
-            <Link to="/" className="text-2xl font-GoogleSans-Regular text-black">
+        
+        <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center space-y-6">
+            <img src={Logo} alt="Pencil Box Logo" className='w-[200px] h-[200px] fixed top-[0px]'/>
+            <Link to="/" className="text-2xl font-Albula-Medium text-black">
                 Home
             </Link>
-            <Link to="/products" className="text-2xl font-GoogleSans-Regular text-black">
+            <Link to="/products" className="text-2xl font-Albula-Medium text-black">
                 Products
             </Link>
-            <Link to="/about" className="text-2xl font-GoogleSans-Regular text-black">
+            <Link to="/about" className="text-2xl font-Albula-Medium text-black">
                 About Us
             </Link>
-            <Link to="/contact" className="text-2xl font-GoogleSans-Regular text-black">
+            <Link to="/contact" className="text-2xl font-Albula-Medium text-black">
                 Contact Us
             </Link>
             <button onClick={() => setIsMenuOpen(false)} className="absolute top-4 right-4">
