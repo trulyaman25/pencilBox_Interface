@@ -31,7 +31,7 @@ function ProfileNavPanel({setProfile}) {
         <div className="fixed inset-0 bg-opacity-50 z-50 animate-fadeIn">
             <div ref={panelRef} className='fixed flex flex-col justify-between items-center w-full sm:w-[400px] h-screen right-0 bg-white text-black z-10 gap-8 shadow-2xl animate-slideIn'>
                 <section>
-                    <img src={Logo} alt="Pencil Box Logo" className='w-[60px] h-[60px] md:w-[200px] md:h-[200px] cursor-pointer' />
+                    <img src={Logo} alt="Pencil Box Logo" className='w-[200px] h-[200px] cursor-pointer' />
                 </section>
 
                 <section className='flex flex-col justify-center items-center w-full gap-8'>

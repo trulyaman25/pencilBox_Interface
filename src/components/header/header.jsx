@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
-import Logo from '/logo/PencilBox_Logo_3.png'
+import Logo from '/logo/PencilBox_Logo_4.png'
 import UserOutlineIcon from '/icons/userOutlineIcon.png';
 import UserFilledIcon from '/icons/userFilledIcon.png';
 import MenuIcon from '/icons/menuIcon.png';
@@ -26,8 +26,8 @@ function Header() {
     }
 
     const NavigationPanel = () => (
-        <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center space-y-8 animate-fadeIn">
-            <img src={Logo} alt="Pencil Box Logo" className='w-[200px] h-[200px] fixed top-[0px] animate-bounce'/>
+        <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center space-y-8">
+            <img src={Logo} alt="Pencil Box Logo" className='w-[200px] h-[200px] fixed top-[0px]'/>
 
             <Link  to="/"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `0ms` }} >
                 Home
@@ -53,14 +53,14 @@ function Header() {
 
     return (
         <>
-            <div className="fixed w-full h-[100px] z-10 flex flex-row justify-between items-center py-1 px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 transition-all duration-300 ease-in-out backdrop-blur-sm bg-white/70">
+            <div className="fixed w-full h-[100px] z-10 flex flex-row justify-between items-center py-1 px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 transition-all duration-300 ease-in-out bg-white">
                 <button className="scale-50 lg:hidden" onClick={() => setIsMenuOpen(true)}>
                     <img src={MenuIcon} alt="Navigation Menu Icon" className="w-[50px] h-[50px]" />
                 </button>
 
-                <section className="w-[196px] flex flex-row justify-center items-center gap-7">
+                <section className="w-fit flex flex-row justify-center items-center gap-7">
                     <Link to="/" className="flex flex-col justify-evenly items-start">
-                        <img src={Logo} alt="Pencil Box Logo" className="w-[120px] h-[120px]"/>
+                        <img src={Logo} alt="Pencil Box Logo" className="w-[171px] h-[64px]"/>
                     </Link>
                 </section>
 
