@@ -13,7 +13,7 @@ function RoutesApp() {
 			<Header />
 			<Analytics />
 			<MainRoutes />
-			{/* <Footer /> */}
+			<Footer />
 		</Router>
 	);
 }

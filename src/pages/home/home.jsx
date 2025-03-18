@@ -17,7 +17,7 @@ function Home() {
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 3000);
+        }, 4000);
 
         return () => clearInterval(interval);
     }, []);
@@ -37,7 +37,7 @@ function Home() {
     return (
         <>
             <main className="relative">
-                <div id='home' className="relative w-full h-[100vh] pt-[100px]">
+                <div id='home' className="relative w-full h-[100vh] pt-[80px]">
                     <img src={LandingBackdrop} alt="Background Texture" className="w-full h-full object-cover -z-10 filter brightness-60" />
                     <div className="absolute inset-0 flex flex-col justify-center items-center px-5 mt-14">
                         <motion.h1 className="w-full uppercase text-white text-center text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl font-Albula-Heavy" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} >
@@ -70,7 +70,7 @@ function Home() {
                         </div>
                     </div>
 
-                    <motion.div className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
+                    <motion.div className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 my-10" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
                         <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-between items-center">
                             <div className="h-full sm:w-[500px] lg:w-[50%] flex flex-col justify-center items-center sm:items-start mt-10 sm:mt-20">
                                 <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-2 xl:mb-4"> Handcrafted </h1>
@@ -90,10 +90,14 @@ function Home() {
                             </div>
 
                             <div className="max-w-[500px] h-full lg:w-[375px] lg:h-fit xl:w-[500px] xl:h-full">
-                                <img src={CustomPortrait} alt="Custom Portrait" className="w-full h-full rounded-3xl object-cover shadow-lg"/>
+                                <img src={CustomPortrait} alt="Custom Portrait" className="w-full h-full rounded-3xl object-cover shadow-lg hover:cursor-pointer"/>
                             </div>
                         </div>
                     </motion.div>
+
+                    <div class="relative flex items-center justify-center my-6">
+                        <span class="w-1/2 h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent"></span>
+                    </div>
 
                     <motion.div id="leafageArt_Section" className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
                         <div className="w-full h-full flex flex-col-reverse lg:flex-row-reverse justify-between items-center">
@@ -114,7 +118,7 @@ function Home() {
                             </div>
 
                             <div className="max-w-[500px] h-full lg:w-[375px] lg:h-fit xl:w-[500px] xl:h-full">
-                                <motion.img src={images[index]} alt="Custom Portrait" className="w-full h-full rounded-3xl object-cover shadow-lg" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}/>
+                                <motion.img src={images[index]} alt="Custom Portrait" className="w-full h-full rounded-3xl object-cover shadow-lg hover:cursor-pointer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}/>
                             </div>
                         </div>
                     </motion.div>

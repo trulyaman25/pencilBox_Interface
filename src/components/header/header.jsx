@@ -8,7 +8,6 @@ import Logo from '/logo/PencilBox_Logo_4.png'
 import UserOutlineIcon from '/icons/userOutlineIcon.png';
 import UserFilledIcon from '/icons/userFilledIcon.png';
 import MenuIcon from '/icons/menuIcon.png';
-import CloseIcon from '/icons/closeIcon.png';
 import ProfileNavPanel from './navigationSidePanel.jsx';
 
 function Header() {
@@ -58,7 +57,7 @@ function Header() {
 
     return (
         <>
-            <div className="fixed w-full h-[100px] z-10 flex flex-row justify-between items-center py-1 px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 transition-all duration-300 ease-in-out bg-white">
+            <div className="fixed w-full h-[80px] z-10 flex flex-row justify-between items-center py-1 px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 transition-all duration-300 ease-in-out bg-white">
                 <button className="scale-50 lg:hidden" onClick={() => setIsMenuOpen(true)}>
                     <img src={MenuIcon} alt="Navigation Menu Icon" className="w-[50px] h-[50px]" />
                 </button>
@@ -89,18 +88,18 @@ function Header() {
                 </section>
 
                 <section className="w-[50px] lg:w-[196px] flex flex-row justify-center lg:justify-end items-center gap-7">
-                    <button className="hover:cursor-pointer transform hover:scale-110 transition-all duration-300">
+                    <button className="hover:cursor-pointer transform transition-all duration-300">
                         <img src={userIcon} alt="User Profile Icon" className="w-[25px] h-[25px]"onMouseEnter={() => setUserIcon(UserFilledIcon)}onMouseLeave={() => setUserIcon(UserOutlineIcon)}onClick={handleProfileClick} />
                     </button>
 
                     <div className="hidden lg:block">
                         {!isAuthenticated ? (
-                            <button onClick={() => loginWithRedirect()} className="font-Albula-Medium relative group hover:text-[#55937e] transition-all duration-300 hover:cursor-pointer text-[#131313] transform hover:scale-105" >
+                            <button onClick={() => loginWithRedirect()} className="font-Albula-Medium relative group hover:text-[#55937e] transition-all duration-300 hover:cursor-pointer text-[#131313] transform" >
                                 Sign In
                                 <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-[#43806c] transition-all duration-300 group-hover:w-full"></span>
                             </button>
                         ) : (
-                            <button onClick={() => logout({ returnTo: window.location.origin })} className="font-Albula-Medium relative group transition-all duration-300 hover:cursor-pointer text-rose-400 hover:text-rose-600 transform hover:scale-105" >
+                            <button onClick={() => logout({ returnTo: window.location.origin })} className="font-Albula-Medium relative group transition-all duration-300 hover:cursor-pointer text-rose-400 hover:text-rose-600 transform" >
                                 Log Out
                                 <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
                             </button>
