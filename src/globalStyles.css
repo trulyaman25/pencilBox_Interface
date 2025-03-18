@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Galey-ExtraLight';
+    src: url('/fonts/Galey/Galey_ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Galey-SemiBold';
+    src: url('/fonts/Galey/Galey_SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-Thin';
+    src: url('/fonts/GoogleSans/ProductSans-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-Light';
+    src: url('/fonts/GoogleSans/ProductSans-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-Regular';
+    src: url('/fonts/GoogleSans/ProductSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-Medium';
+    src: url('/fonts/GoogleSans/ProductSans-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-Bold';
+    src: url('/fonts/GoogleSans/ProductSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-Black';
+    src: url('/fonts/GoogleSans/ProductSans-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-ThinItalic';
+    src: url('/fonts/GoogleSans/Italic/ProductSans-ThinItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-LightItalic';
+    src: url('/fonts/GoogleSans/Italic/ProductSans-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-RegularItalic';
+    src: url('/fonts/GoogleSans/Italic/ProductSans-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-MediumItalic';
+    src: url('/fonts/GoogleSans/Italic/ProductSans-MediumItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-BoldItalic';
+    src: url('/fonts/GoogleSans/Italic/ProductSans-BoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans-BlackItalic';
+    src: url('/fonts/GoogleSans/Italic/ProductSans-BlackItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@theme {
+    --font-Galey-ExtraLight: Galey-ExtraLight;
+    --font-Galey-SemiBold: Galey-SemiBold;
+    
+    --font-GoogleSans-Thin: GoogleSans-Thin;
+    --font-GoogleSans-Light: GoogleSans-Light;
+    --font-GoogleSans-Regular: GoogleSans-Regular;
+    --font-GoogleSans-Medium: GoogleSans-Medium;
+    --font-GoogleSans-Bold: GoogleSans-Bold;
+    --font-GoogleSans-Black: GoogleSans-Black;
+
+    --font-GoogleSans-ThinItalic: GoogleSans-ThinItalic;
+    --font-GoogleSans-LightItalic: GoogleSans-LightItalic;
+    --font-GoogleSans-RegularItalic: GoogleSans-RegularItalic;
+    --font-GoogleSans-MediumItalic: GoogleSans-MediumItalic;
+    --font-GoogleSans-BoldItalic: GoogleSans-BoldItalic;
+    --font-GoogleSans-BlackItalic: GoogleSans-BlackItalic;
+    --breakpoint-xs: 30rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}  
