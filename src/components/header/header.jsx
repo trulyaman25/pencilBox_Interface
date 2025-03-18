@@ -26,27 +26,32 @@ function Header() {
     }
 
     const NavigationPanel = () => (
-        <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center space-y-8">
-            <img src={Logo} alt="Pencil Box Logo" className='w-[200px] h-[200px] fixed top-[0px]'/>
+        <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-between space-y-8 py-20">
+            <section>
+                <img src={Logo} alt="Pencil Box Logo" className='w-[210px] h-[80px]'/>
+            </section>
 
-            <Link  to="/"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `0ms` }} >
-                Home
-            </Link>
+            <section className='flex flex-col items-center justify-evenly space-y-8'>
+                <Link  to="/"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `0ms` }} >
+                    Home
+                </Link>
 
-            <Link  to="/products"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `100ms` }} >
-                Products
-            </Link>
+                <Link  to="/products"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `100ms` }} >
+                    Products
+                </Link>
 
-            <Link  to="/aboutus"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `200ms` }} >
-                About Us
-            </Link>
+                <Link  to="/aboutus"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `200ms` }} >
+                    About Us
+                </Link>
 
-            <Link  to="/contactus"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `300ms` }} >
-                Contact Us
-            </Link>
+                <Link  to="/contactus"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `300ms` }} >
+                    Contact Us
+                </Link>
+            </section>
+
             
-            <button onClick={() => setIsMenuOpen(false)} className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-all duration-300">
-                <img src={CloseIcon} alt="Close Menu" className="w-[30px] h-[30px] transform hover:rotate-180 transition-all duration-500" />
+            <button onClick={() => setIsMenuOpen(false)} className="text-2xl font-Albula-Medium text-rose-400 hover:text-[#43806c] transform hover:scale-110 transition-all duration-300">
+                Close
             </button>
         </div>
     );
@@ -60,7 +65,7 @@ function Header() {
 
                 <section className="w-fit flex flex-row justify-center items-center gap-7">
                     <Link to="/" className="flex flex-col justify-evenly items-start">
-                        <img src={Logo} alt="Pencil Box Logo" className="w-[171px] h-[64px]"/>
+                        <img src={Logo} alt="Pencil Box Logo" className="w-[150px] h-[56px] sm:w-[171px] sm:h-[64px]"/>
                     </Link>
                 </section>
 

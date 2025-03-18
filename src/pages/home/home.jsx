@@ -28,16 +28,16 @@ function Home() {
                         </motion.h1>
 
                         <motion.h2 className="w-full text-white text-center text-lg sm:text-xl md:text-2xl font-Albula-Light mt-4" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }} >
-                            Crafting Custom Portraits That Turn Your Memories into Art.
+                            Crafting <span className='font-Albula-Heavy'>Custom Portraits</span> That Turn Your Memories into Art.
                         </motion.h2>
 
                         <motion.h2 className="w-full text-white text-center text-lg sm:text-xl md:text-2xl font-Albula-Light mt-4" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} >
-                            <div className='flex flex-col sm:flex-row justify-center items-center gap-5 md:gap-8 mt-10'>
+                            <div className='flex flex-col sm:flex-row justify-center items-center gap-5 md:gap-8 lg:mt-5'>
                                 <NavLink onClick={handleProductClick} className="text-black text-md md:text-xl border-2 capitalize border-[#FED685] px-8 py-2 md:px-12 md:py-4 bg-[#FED685] hover:bg-[#ffb82b] hover:text-white text-center text-md font-Albula-Regular transition-all ease-in-out hover:cursor-pointer rounded-full">
                                     Shop Now
                                 </NavLink>
                                 <NavLink onClick={handleProductClick} className="text-white text-md md:text-xl border-2 capitalize border-[#43806c] px-8 py-2 md:px-12 md:py-4 hover:bg-[#43806c] hover:text-white text-center text-md font-Albula-Regular transition-all ease-in-out hover:cursor-pointer rounded-full">
-                                    Request a Call
+                                    Book a Call
                                 </NavLink>
                             </div>
                         </motion.h2>
