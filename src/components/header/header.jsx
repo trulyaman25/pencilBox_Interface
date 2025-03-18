@@ -1,7 +1,8 @@
 import '../../globalStyles.css';
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import Logo from '/logo/PencilBox_Logo_4.png'
@@ -24,6 +25,35 @@ function Header() {
         }
     }
 
+    
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleScroll = (event, sectionId) => {
+        event.preventDefault();
+        setIsMenuOpen(false);
+    
+        if (location.pathname === '/') {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const yOffset = -80;
+                const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+        } else {
+            navigate('/');
+            setTimeout(() => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const yOffset = -80;
+                    const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            }, 100);
+        }
+    };
+
     const NavigationPanel = () => (
         <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-between space-y-8 py-20">
             <section>
@@ -31,19 +61,23 @@ function Header() {
             </section>
 
             <section className='flex flex-col items-center justify-evenly space-y-8'>
-                <Link  to="/"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `0ms` }} >
+                <Link to="/" onClick={(e) => handleScroll(e, "home")}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `0ms` }} >
                     Home
                 </Link>
 
-                <Link  to="/products"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `100ms` }} >
-                    Products
+                <Link to="#premiumCollection" onClick={(e) => handleScroll(e, "premiumCollection")}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `100ms` }} >
+                    Premium Products
                 </Link>
 
-                <Link  to="/aboutus"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `200ms` }} >
+                <Link to="#exoticProducts" onClick={(e) => handleScroll(e, "exoticProducts")}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `100ms` }} >
+                    Exotic Products
+                </Link>
+
+                <Link to="#aboutUs" onClick={(e) => handleScroll(e, "aboutUs")}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `200ms` }} >
                     About Us
                 </Link>
 
-                <Link  to="/contactus"  onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `300ms` }} >
+                <Link to="/contactus" onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `300ms` }} >
                     Contact Us
                 </Link>
             </section>
@@ -69,22 +103,30 @@ function Header() {
                 </section>
 
                 <section className="hidden lg:flex flex-row justify-center items-center gap-10">
-                    <Link to="/" className="font-Albula-Medium relative group text-black overflow-hidden">
+                    <NavLink to="/" onClick={(e) => handleScroll(e, "home")} className="font-Albula-Medium relative group text-black overflow-hidden">
                         <span className="relative z-10 transition-colors duration-300 group-hover:text-[#43806c]">Home</span>
                         <span className="absolute left-0 bottom-0 w-full h-[1px] bg-[#43806c] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-                    </Link>
-                    <Link to="/products" className="font-Albula-Medium relative group text-black overflow-hidden">
-                        <span className="relative z-10 transition-colors duration-300 group-hover:text-[#43806c]">Products</span>
+                    </NavLink>
+
+                    <NavLink to="#premiumCollection" onClick={(e) => handleScroll(e, "premiumCollection")} className="font-Albula-Medium relative group text-black overflow-hidden">
+                        <span className="relative z-10 transition-colors duration-300 group-hover:text-[#43806c]">Premium Products</span>
                         <span className="absolute left-0 bottom-0 w-full h-[1px] bg-[#43806c] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-                    </Link>
-                    <Link to="/aboutus" className="font-Albula-Medium relative group text-black overflow-hidden">
+                    </NavLink>
+
+                    <NavLink to="#exoticProducts" onClick={(e) => handleScroll(e, "exoticProducts")} className="font-Albula-Medium relative group text-black overflow-hidden">
+                        <span className="relative z-10 transition-colors duration-300 group-hover:text-[#43806c]">Exotic Products</span>
+                        <span className="absolute left-0 bottom-0 w-full h-[1px] bg-[#43806c] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                    </NavLink>
+
+                    <NavLink to="#aboutUs" onClick={(e) => handleScroll(e, "aboutUs")} className="font-Albula-Medium relative group text-black overflow-hidden">
                         <span className="relative z-10 transition-colors duration-300 group-hover:text-[#43806c]">About Us</span>
                         <span className="absolute left-0 bottom-0 w-full h-[1px] bg-[#43806c] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-                    </Link>
-                    <Link to="/contactus" className="font-Albula-Medium relative group text-black overflow-hidden">
+                    </NavLink>
+
+                    <NavLink to="/contactus" className="font-Albula-Medium relative group text-black overflow-hidden">
                         <span className="relative z-10 transition-colors duration-300 group-hover:text-[#43806c]">Contact Us</span>
                         <span className="absolute left-0 bottom-0 w-full h-[1px] bg-[#43806c] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-                    </Link>
+                    </NavLink>
                 </section>
 
                 <section className="w-[50px] lg:w-[196px] flex flex-row justify-center lg:justify-end items-center gap-7">

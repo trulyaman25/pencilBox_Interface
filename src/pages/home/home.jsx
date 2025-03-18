@@ -99,7 +99,7 @@ function Home() {
                         <span class="w-1/2 h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent"></span>
                     </div>
 
-                    <motion.div id="leafageArt_Section" className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
+                    <motion.div className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
                         <div className="w-full h-full flex flex-col-reverse lg:flex-row-reverse justify-between items-center">
                             <div className="h-full sm:w-[500px] lg:w-[50%] flex flex-col justify-center items-center sm:items-start mt-10 sm:mt-20">
                                 <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-2 xl:mb-4 text-center">Exquisite <span className='text-[#64a48f]'>Leaf Art,</span></h1>
@@ -125,29 +125,31 @@ function Home() {
                 </section>
 
 
-                <div className='w-full p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16 bg-[#43806c]'>
-                    <div className='text-3xl lg:text-4xl font-Albula-Heavy text-white text-center'>
-                        Explore Our Exotic Hand-Crafted Portraits!
+                <section id="exoticProducts">
+                    <div className='w-full p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16 bg-[#43806c]'>
+                        <div className='text-3xl lg:text-4xl font-Albula-Heavy text-white text-center'>
+                            Explore Our Exotic Hand-Crafted Portraits!
+                        </div>
                     </div>
-                </div>
 
-                <motion.div id="products" className="w-full min-h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-                    <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
-                    {productsData.products.map((product) => (
-                            <motion.div key={product.id} className="group relative bg-white overflow-hidden transition-all hover:cursor-pointer" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>                                <div className='w-full max-h-[400px] overflow-hidden'>
-                                    <img src={product.image} alt={product.name} className="w-full max-h-[400px] object-cover transition-transform duration-300 group-hover:scale-102" />
-                                </div>
+                    <motion.div className="w-full min-h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
+                        <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+                        {productsData.products.map((product) => (
+                                <motion.div key={product.id} className="group relative bg-white overflow-hidden transition-all hover:cursor-pointer" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>                                <div className='w-full max-h-[400px] overflow-hidden'>
+                                        <img src={product.image} alt={product.name} className="w-full max-h-[400px] object-cover transition-transform duration-300 group-hover:scale-102" />
+                                    </div>
 
-                                <h1 className='font-GoogleSans-Medium text-xl mt-7'>{product.name}</h1>
-                                
-                                <div>
-                                    <span className='font-GoogleSans-Medium text-gray-400 line-through mr-4'>₹ {product.actualPrice}</span>
-                                    <span className='font-GoogleSans-Medium text-gray-800'>₹ {product.currentPrice}</span>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
+                                    <h1 className='font-GoogleSans-Medium text-xl mt-7'>{product.name}</h1>
+                                    
+                                    <div>
+                                        <span className='font-GoogleSans-Medium text-gray-400 line-through mr-4'>₹ {product.actualPrice}</span>
+                                        <span className='font-GoogleSans-Medium text-gray-800'>₹ {product.currentPrice}</span>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+                </section>
             </main>
         </>
     );
