@@ -23,7 +23,7 @@ function Home() {
     }, []);
     
     const handleProductClick = () => {
-        const element = document.getElementById("customPortrait_Section");
+        const element = document.getElementById("premiumCollection");
         if (element) {
             const offset = 80;
             const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
@@ -52,7 +52,7 @@ function Home() {
                             <div className='flex flex-col sm:flex-row justify-center items-center gap-5 md:gap-8 lg:mt-5'>
                                 <div className='sm:border-2 sm:border-white p-1 sm:bg-white sm:rounded-full flex flex-col sm:flex-row justify-center items-center gap-5 md:gap-8'>
                                     <NavLink onClick={handleProductClick} className="text-white text-md md:text-xl border-2 capitalize border-[#43806c] px-8 py-2 md:px-12 md:py-4 bg-[#43806c] hover:bg-[#379a79] hover:text-white text-center text-md font-Albula-Regular transition-all ease-in-out hover:cursor-pointer rounded-full">
-                                        Shop Now
+                                        Shop Premium
                                     </NavLink>
                                     <NavLink className="text-white sm:text-black text-md md:text-xl border-2 capitalize border-[#43806c] px-8 py-2 md:px-12 md:py-4 hover:bg-[#43806c] hover:text-white text-center text-md font-Albula-Regular transition-all ease-in-out hover:cursor-pointer rounded-full">
                                         Book a Call
@@ -63,58 +63,67 @@ function Home() {
                     </div>
                 </div>
 
-                <motion.div id="customPortrait_Section" className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-                    <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-between items-center">
-                        <div className="h-full sm:w-[500px] lg:w-[50%] flex flex-col justify-center items-center sm:items-start mt-10 sm:mt-20">
-                            <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-2 xl:mb-4"> Handcrafted </h1>
-                            <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-6"> Custom Portraits </h1>
-
-
-                            <motion.p className="text-sm xl:text-lg text-center sm:text-start font-Albula-Regular text-gray-600" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} >
-                                Turn your cherished moments into timeless works of art. 
-                                <span className="font-Albula-SemiBold text-[#43806c] hover:cursor-pointer"> Mr. Sahil</span>, creates 
-                                stunning handmade portraits, capturing every detail with precision and passion.  
-                                Upload your photo, choose your style, and let us craft a masterpiece for you.
-                            </motion.p>
-
-                            <NavLink onClick={handleProductClick} className="w-fit h-fit font-Albula-Regular text-lg lg:text-xl text-white text-center text-md px-8 py-2 mt-8 xl:mt-10 border-2 border-[#43806c] bg-[#43806c] hover:bg-[#3b6c5d] transition-all ease-in-out hover:cursor-pointer rounded-full">
-                                Order Now
-                            </NavLink>
-                        </div>
-
-                        <div className="max-w-[500px] h-full lg:w-[375px] lg:h-fit xl:w-[500px] xl:h-full">
-                            <img src={CustomPortrait} alt="Custom Portrait" className="w-full h-full rounded-3xl object-cover shadow-lg"/>
+                <section id="premiumCollection">
+                    <div className='w-full p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 bg-[#43806c]'>
+                        <div className='text-3xl lg:text-4xl font-Albula-Heavy text-white text-center'>
+                            Explore Our Premium Collection <span className='hidden md:inline'>of Handcrafted Masterpieces</span>
                         </div>
                     </div>
-                </motion.div>
 
-                <motion.div id="leafageArt_Section" className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-                    <div className="w-full h-full flex flex-col-reverse lg:flex-row-reverse justify-between items-center">
-                        <div className="h-full sm:w-[500px] lg:w-[50%] flex flex-col justify-center items-center sm:items-start mt-10 sm:mt-20">
-                            <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-2 xl:mb-4 text-center">Exquisite <span className='text-[#FED789]'>Leaf Art,</span></h1>
-                            <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl mb-6 text-center">Carved on Demand!</h1>
+                    <motion.div className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
+                        <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-between items-center">
+                            <div className="h-full sm:w-[500px] lg:w-[50%] flex flex-col justify-center items-center sm:items-start mt-10 sm:mt-20">
+                                <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-2 xl:mb-4"> Handcrafted </h1>
+                                <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-6"> Custom Portraits </h1>
 
-                            <motion.p className="text-sm xl:text-lg text-center sm:text-start font-Albula-Regular text-gray-600" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} >
-                                Experience the elegance of Leafage Art, where your portrait is precisely 
-                                hand-carved on a delicate Peepal leaf by <span className="font-Albula-SemiBold text-[#43806c] hover:cursor-pointer">Mr. Sahil</span>. Each piece is custom-made on 
-                                demand, blending nature’s beauty with intricate craftsmanship to create 
-                                a luxurious, one-of-a-kind masterpiece—perfect for gifting or personal keepsakes.
-                            </motion.p>
 
-                            <NavLink onClick={handleProductClick} className="w-fit h-fit font-Albula-Regular text-lg lg:text-xl text-black text-center text-md px-8 py-2 mt-8 xl:mt-10 border-2 border-[#FED789] bg-[#FED789] hover:bg-[#ffcb62] hover:text-white transition-all ease-in-out hover:cursor-pointer rounded-full">
-                                Order Now
-                            </NavLink>
+                                <motion.p className="text-sm xl:text-lg text-center sm:text-start font-Albula-Regular text-gray-600" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} >
+                                    Turn your cherished moments into timeless works of art. 
+                                    <span className="font-Albula-SemiBold text-[#43806c] hover:cursor-pointer"> Mr. Sahil</span>, creates 
+                                    stunning handmade portraits, capturing every detail with precision and passion.  
+                                    Upload your photo, choose your style, and let us craft a masterpiece for you.
+                                </motion.p>
+
+                                <NavLink onClick={handleProductClick} className="w-fit h-fit font-Albula-Regular text-lg lg:text-xl text-white text-center text-md px-8 py-2 mt-8 xl:mt-10 border-2 border-[#43806c] bg-[#43806c] hover:bg-[#3b6c5d] transition-all ease-in-out hover:cursor-pointer rounded-full">
+                                    Order Now
+                                </NavLink>
+                            </div>
+
+                            <div className="max-w-[500px] h-full lg:w-[375px] lg:h-fit xl:w-[500px] xl:h-full">
+                                <img src={CustomPortrait} alt="Custom Portrait" className="w-full h-full rounded-3xl object-cover shadow-lg"/>
+                            </div>
                         </div>
+                    </motion.div>
 
-                        <div className="max-w-[500px] h-full lg:w-[375px] lg:h-fit xl:w-[500px] xl:h-full">
-                            <motion.img src={images[index]} alt="Custom Portrait" className="w-full h-full rounded-3xl object-cover shadow-lg" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}/>
+                    <motion.div id="leafageArt_Section" className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
+                        <div className="w-full h-full flex flex-col-reverse lg:flex-row-reverse justify-between items-center">
+                            <div className="h-full sm:w-[500px] lg:w-[50%] flex flex-col justify-center items-center sm:items-start mt-10 sm:mt-20">
+                                <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-2 xl:mb-4 text-center">Exquisite <span className='text-[#64a48f]'>Leaf Art,</span></h1>
+                                <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl mb-6 text-center">Carved on Demand!</h1>
+
+                                <motion.p className="text-sm xl:text-lg text-center sm:text-start font-Albula-Regular text-gray-600" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} >
+                                    Experience the elegance of Leafage Art, where your portrait is precisely 
+                                    hand-carved on a delicate Peepal leaf by <span className="font-Albula-SemiBold text-[#43806c] hover:cursor-pointer">Mr. Sahil</span>. Each piece is custom-made on 
+                                    demand, blending nature’s beauty with intricate craftsmanship to create 
+                                    a luxurious, one-of-a-kind masterpiece—perfect for gifting or personal keepsakes.
+                                </motion.p>
+
+                                <NavLink onClick={handleProductClick} className="w-fit h-fit font-Albula-Regular text-lg lg:text-xl text-black text-center text-md px-8 py-2 mt-8 xl:mt-10 border-2 border-[#FED789] bg-[#FED789] hover:bg-[#ffcb62] hover:text-white transition-all ease-in-out hover:cursor-pointer rounded-full">
+                                    Order Now
+                                </NavLink>
+                            </div>
+
+                            <div className="max-w-[500px] h-full lg:w-[375px] lg:h-fit xl:w-[500px] xl:h-full">
+                                <motion.img src={images[index]} alt="Custom Portrait" className="w-full h-full rounded-3xl object-cover shadow-lg" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}/>
+                            </div>
                         </div>
-                    </div>
-                </motion.div>
+                    </motion.div>
+                </section>
+
 
                 <div className='w-full p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16 bg-[#43806c]'>
                     <div className='text-3xl lg:text-4xl font-Albula-Heavy text-white text-center'>
-                        Experience the Art of Exotic Hand-Crafted Portraits!
+                        Explore Our Exotic Hand-Crafted Portraits!
                     </div>
                 </div>
 
