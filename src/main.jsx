@@ -10,9 +10,9 @@ const root = createRoot(document.getElementById('root'));
 root.render(
 	<Auth0Provider
 		domain="trulyaman25.us.auth0.com"
-		clientId="uvUqiVwXm0ppLF1Gh3NgBJ8Rirr26eTE"
+		clientId="anZHdv8YM9k7wlCohm4gxm6ZWR2ObN29"
 		authorizationParams={{
-		redirect_uri: window.location.origin
+			redirect_uri: window.location.origin
 		}}
 	>
 		<Routes />
