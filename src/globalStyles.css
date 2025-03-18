@@ -98,6 +98,69 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Albula-Thin';
+    src: url('/fonts/Albula/Albula-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albula-ExtraLight';
+    src: url('/fonts/Albula/Albula-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albula-Light';
+    src: url('/fonts/Albula/Albula-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albula-Regular';
+    src: url('/fonts/Albula/Albula-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albula-Medium';
+    src: url('/fonts/Albula/Albula-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albula-SemiBold';
+    src: url('/fonts/Albula/Albula-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albula-Bold';
+    src: url('/fonts/Albula/Albula-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albula-ExtraBold';
+    src: url('/fonts/Albula/Albula-ExtraBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albula-Heavy';
+    src: url('/fonts/Albula/Albula-Heavy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @theme {
     --font-Galey-ExtraLight: Galey-ExtraLight;
     --font-Galey-SemiBold: Galey-SemiBold;
@@ -115,6 +178,17 @@
     --font-GoogleSans-MediumItalic: GoogleSans-MediumItalic;
     --font-GoogleSans-BoldItalic: GoogleSans-BoldItalic;
     --font-GoogleSans-BlackItalic: GoogleSans-BlackItalic;
+    
+    --font-Albula-Thin: Albula-Thin;
+    --font-Albula-ExtraLight: Albula-ExtraLight;
+    --font-Albula-Light: Albula-Light;
+    --font-Albula-Regular: Albula-Regular;
+    --font-Albula-Medium: Albula-Medium;
+    --font-Albula-SemiBold: Albula-SemiBold;
+    --font-Albula-Bold: Albula-Bold;
+    --font-Albula-ExtraBold: Albula-ExtraBold;
+    --font-Albula-Heavy: Albula-Heavy;
+
     --breakpoint-xs: 30rem;
 }
 
