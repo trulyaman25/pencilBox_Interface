@@ -9,7 +9,7 @@ import UserOutlineIcon from '/icons/userOutlineIcon.png';
 import UserFilledIcon from '/icons/userFilledIcon.png';
 import MenuIcon from '/icons/menuIcon.png';
 import CloseIcon from '/icons/closeIcon.png';
-import ProfileNavPanel from './ProfileNavPanel.jsx';
+import ProfileNavPanel from './navigationSidePanel.jsx';
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
