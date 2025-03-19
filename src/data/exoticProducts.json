@@ -9,7 +9,11 @@
             "currentPrice": 599,
             "category": "portrait",
             "materials": "High-quality graphite and charcoal on premium sketch paper",
-            "dimensions": "A4 Size (8.3 x 11.7 inches)",
+            "dimensions":   [
+                                "A4 Size (8.3 x 11.7 inches)",
+                                "A3 Size (11.7 x 16.5 inches)",
+                                "A4 Size (16.6 x 23.4 inches)"
+                            ],
             "productCare": "Keep away from moisture and direct sunlight. Frame recommended.",
             "stylingTips": "Best suited for minimalistic or nature-inspired interiors.",
             "reviews": { "rating": 4.8, "count": 32 },
@@ -28,7 +32,11 @@
             "currentPrice": 599,
             "category": "portrait",
             "materials": "Graphite and charcoal on textured paper",
-            "dimensions": "A3 Size (11.7 x 16.5 inches)",
+            "dimensions":   [
+                                "A4 Size (8.3 x 11.7 inches)",
+                                "A3 Size (11.7 x 16.5 inches)",
+                                "A4 Size (16.6 x 23.4 inches)"
+                            ],
             "productCare": "Store in a dry place. Avoid touching the surface directly.",
             "stylingTips": "Perfect for gym spaces or a personal motivation corner.",
             "reviews": { "rating": 4.7, "count": 25 },
@@ -47,7 +55,11 @@
             "currentPrice": 599,
             "category": "digital",
             "materials": "Digital illustration printed on premium art paper",
-            "dimensions": "A2 Size (16.5 x 23.4 inches)",
+            "dimensions":   [
+                                "A4 Size (8.3 x 11.7 inches)",
+                                "A3 Size (11.7 x 16.5 inches)",
+                                "A4 Size (16.6 x 23.4 inches)"
+                            ],
             "productCare": "Frame recommended for longevity.",
             "stylingTips": "Ideal for gaming setups or anime-themed rooms.",
             "reviews": { "rating": 4.9, "count": 40 },
@@ -66,7 +78,11 @@
             "currentPrice": 599,
             "category": "portrait",
             "materials": "Watercolors and ink on handmade paper",
-            "dimensions": "A4 Size (8.3 x 11.7 inches)",
+            "dimensions":   [
+                                "A4 Size (8.3 x 11.7 inches)",
+                                "A3 Size (11.7 x 16.5 inches)",
+                                "A4 Size (16.6 x 23.4 inches)"
+                            ],
             "productCare": "Avoid water exposure. Store in a frame for protection.",
             "stylingTips": "Perfect for puja rooms or spiritual spaces.",
             "reviews": { "rating": 4.8, "count": 29 },

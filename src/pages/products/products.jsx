@@ -45,7 +45,7 @@ const ProductDetail = () => {
 
     return (
         <>
-            <main className="relative pt-[50px] px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 h-full min-h-screen flex justify-center items-center">
+            <main className="relative pt-[50px] px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 h-fit min-h-screen flex justify-center items-center">
                 <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-6 justify-between transition-all ease-in-out mt-10">
                     <div className="w-full max-h-[calc(100vh-2rem)] flex justify-center items-center">
                         <div className="relative group flex flex-col justify-center items-center mt-10 lg:mt-5 mb-10">
@@ -53,7 +53,7 @@ const ProductDetail = () => {
                         </div>
                     </div>
 
-                    <div className="w-full mt-[10px] max-w-[540px] lg:max-w-[840px] overflow-y-auto max-h-[calc(100vh-2rem)] break-words transition-all ease-in-out">
+                    <div className="w-full mt-[10px] max-w-[540px] lg:max-w-[840px] h-fit overflow-y-auto break-words transition-all ease-in-out">
                         <div className="flex flex-row justify-between items-center">
                             <span>
                                 <h1 className="text-2xl md:text-3xl xl:text-4xl font-Albula-Bold uppercase">{product.name}</h1>
@@ -116,7 +116,16 @@ const ProductDetail = () => {
                         <div className="mt-6 mb-6 font-Albula-Bold">
                             {[ 
                                 { label: "Materials", content: product.materials },
-                                { label: "Dimensions", content: product.dimensions },
+                                { 
+                                    label: "Dimensions", 
+                                    content: (
+                                        <ul className="list-disc pl-5">
+                                            {product.dimensions.map((dimension, index) => (
+                                                <li key={index} className="mb-1">{dimension}</li>
+                                            ))}
+                                        </ul>
+                                    )
+                                },
                                 { label: "Product Care", content: product.productCare },
                                 { label: "Styling Tips", content: product.stylingTips },
                             ].map(({ label, content }) => (
@@ -127,7 +136,13 @@ const ProductDetail = () => {
                                     </button>
                                     <div className={`overflow-hidden transition-all duration-200 ${ openSection === label ? "max-h-96" : "max-h-0" }`}>
                                         <div className="pb-4 space-y-2 text-gray-700">
-                                            <p className="text-sm md:text-sm px-5 text-gray-500 font-Albula-Regular">{content}</p>
+                                            {typeof content === 'string' ? (
+                                                <p className="text-sm md:text-sm px-5 text-gray-500 font-Albula-Regular">{content}</p>
+                                            ) : (
+                                                <div className="text-sm md:text-sm px-5 text-gray-500 font-Albula-Regular">
+                                                    {content}
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
