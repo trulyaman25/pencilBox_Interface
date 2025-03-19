@@ -154,7 +154,7 @@ function Home() {
                     </motion.div>
                 </section>
                 
-                <section id="aboutUs">
+                <section id="aboutUs" className='mt-10'>
                     <div className='w-full p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 bg-[#43806c]'>
                         <div className='text-3xl lg:text-4xl font-Albula-Heavy text-white text-center'>
                             The Artistic Genius Behind PencilBox!
@@ -164,7 +164,7 @@ function Home() {
                     <motion.div className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 my-10" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
                         <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-between items-center">
                             <div className="h-full sm:w-[500px] lg:w-[50%] flex flex-col justify-center items-center sm:items-start mt-10 sm:mt-20">
-                                <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-4"> Sahil Nigam </h1>
+                                <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-6"> Sahil Nigam </h1>
 
                                 <motion.p className="text-sm xl:text-lg text-center sm:text-start font-Albula-Regular text-gray-600" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} >
                                     Sahil Nigam is a talented 24-year-old artist known for his versatility in 
