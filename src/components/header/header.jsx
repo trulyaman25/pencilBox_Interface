@@ -77,7 +77,7 @@ function Header() {
                     About Us
                 </Link>
 
-                <Link to="/contactus" onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `300ms` }} >
+                <Link to="/contact" onClick={() => setIsMenuOpen(false)}  className="text-2xl font-Albula-Medium text-black hover:text-[#43806c] transform hover:scale-110 transition-all duration-300" style={{ animationDelay: `300ms` }} >
                     Contact Us
                 </Link>
             </section>
@@ -123,7 +123,7 @@ function Header() {
                         <span className="absolute left-0 bottom-0 w-full h-[1px] bg-[#43806c] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
                     </NavLink>
 
-                    <NavLink to="/contactus" className="font-Albula-Medium relative group text-black overflow-hidden">
+                    <NavLink to="/contact" className="font-Albula-Medium relative group text-black overflow-hidden">
                         <span className="relative z-10 transition-colors duration-300 group-hover:text-[#43806c]">Contact Us</span>
                         <span className="absolute left-0 bottom-0 w-full h-[1px] bg-[#43806c] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
                     </NavLink>

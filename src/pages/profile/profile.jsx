@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useAuth0 } from '@auth0/auth0-react';
 import '../../globalStyles.css';
@@ -20,8 +20,21 @@ const Profile = () => {
         city: "",
         state: "",
         pincode: "",
-        landmark: ""
+        landmark: "",
+        profileCompleted: false
     });
+
+    useEffect(() => {
+        if (user?.sub) {
+            setFormData(prev => ({
+                ...prev,
+                email: user.email || "",
+                firstName: user.given_name || "",
+                lastName: user.family_name || ""
+            }));
+            console.log("User data loaded:", user);
+        }
+    }, [user]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -29,17 +42,27 @@ const Profile = () => {
             ...prev,
             [name]: value
         }));
+        console.log("Form data updated:", name, value);
     };
 
     const handleSave = () => {
-        console.log('Saving data:', formData);
+        console.log("Saving profile data:", formData);
         setIsEditing(false);
+    };
+
+    const handleEditClick = () => {
+        setIsEditing(!isEditing);
     };
 
     const personalDetails = [
         { label: "First Name", name: "firstName", type: "text", placeholder: "Enter your first name" },
         { label: "Last Name", name: "lastName", type: "text", placeholder: "Enter your last name" },
-        { label: "Username", name: "username", type: "text", placeholder: "Enter your username" },
+        {
+            label: "Username",
+            name: "username",
+            type: "text",
+            placeholder: "Enter your username",
+        },
         { label: "Email", name: "email", type: "email", placeholder: "Enter your email", disabled: true },
         { label: "Phone", name: "phone", type: "tel", placeholder: "Enter your phone number" },
         { label: "Alternative Phone", name: "alternativePhone", type: "tel", placeholder: "Enter alternative phone number" }
@@ -87,9 +110,16 @@ const Profile = () => {
                     <div className="bg-white rounded-2xl p-8 mb-20">
                         <div className="relative">
                             <div className="flex justify-between items-center mb-6">
-                                <h2 className="text-xl font-Albula-Medium text-gray-800">Personal Information</h2>
+                                <div className="flex items-center gap-4">
+                                    <h2 className="text-xl font-Albula-Medium text-gray-800">Personal Information</h2>
+                                    {formData.profileCompleted && (
+                                        <span className="px-2 py-1 bg-green-50 text-green-600 text-sm rounded-lg">
+                                            Profile Completed
+                                        </span>
+                                    )}
+                                </div>
                                 <button
-                                    onClick={() => setIsEditing(!isEditing)}
+                                    onClick={handleEditClick}
                                     className="px-4 py-2 font-Albula-Medium text-sm text-[#43806c] hover:text-[#376857] transition-all duration-300"
                                 >
                                     {isEditing ? 'Cancel' : 'Edit Information'}
@@ -110,9 +140,10 @@ const Profile = () => {
                                                 value={formData[field.name]}
                                                 onChange={handleInputChange}
                                                 disabled={!isEditing || field.disabled}
-                                                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-[#43806c] 
-                                                outline-none transition-all duration-300 font-Albula-Regular disabled:bg-gray-50
-                                                hover:cursor-pointer"
+                                                className={`w-full px-4 py-2.5 rounded-xl border 
+                                                    border-gray-200 
+                                                    focus:border-[#43806c] outline-none transition-all duration-300 
+                                                    font-Albula-Regular disabled:bg-gray-50 hover:cursor-pointer`}
                                             />
                                         </div>
                                     ))}
