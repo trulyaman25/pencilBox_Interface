@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import productsData from "../../data/exoticProducts.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowLeft, faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -7,13 +8,33 @@ import { ChevronDown } from "lucide-react";
 
 const ProductDetail = () => {
     const { productID } = useParams();
+    const { isAuthenticated, user } = useAuth0();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [openSection, setOpenSection] = useState(null);
     const [selectedSize, setSelectedSize] = useState(null);
+    const [profileCompleted, setProfileCompleted] = useState(false);
+    const [userExists, setUserExists] = useState(false);
     
     const navigate = useNavigate();
-    
+
+    useEffect(() => {
+        const checkUserProfile = async () => {
+            if (isAuthenticated && user?.sub) {
+                try {
+                    const response = await fetch(`/api/users/${user.sub}`);
+                    const data = await response.json();
+                    setUserExists(true);
+                    setProfileCompleted(data.profileCompleted);
+                } catch (error) {
+                    setUserExists(false);
+                    setProfileCompleted(false);
+                }
+            }
+        };
+        checkUserProfile();
+    }, [isAuthenticated, user]);
+
     useEffect(() => {
         const fetchProduct = () => {
             setLoading(true);
@@ -42,6 +63,44 @@ const ProductDetail = () => {
     const toggleSection = (section) => {
         setOpenSection(openSection === section ? null : section);
     };
+
+    const getButtonState = () => {
+        if (!isAuthenticated) {
+            return {
+                disabled: true,
+                text: "Please login to continue",
+                className: "bg-gray-200 cursor-not-allowed"
+            };
+        }
+        if (!userExists) {
+            return {
+                disabled: true,
+                text: "Complete your profile for shipping details",
+                className: "bg-gray-200 cursor-pointer"
+            };
+        }
+        if (!profileCompleted) {
+            return {
+                disabled: true,
+                text: "Complete your profile for shipping details",
+                className: "bg-gray-200 cursor-not-allowed"
+            };
+        }
+        if (!selectedSize) {
+            return {
+                disabled: true,
+                text: "Select a size to continue",
+                className: "bg-gray-200 cursor-not-allowed"
+            };
+        }
+        return {
+            disabled: false,
+            text: "Buy Now",
+            className: "bg-[#FED685] hover:bg-[#ffb82b] cursor-pointer"
+        };
+    };
+
+    const buttonState = getButtonState();
 
     return (
         <>
@@ -103,14 +162,11 @@ const ProductDetail = () => {
                         )}
 
                         <button 
-                            className={`mt-8 w-full px-10 py-3 text-[#131313] capitalize rounded-full font-Albula-Regular text-lg transition-all duration-300 ${
-                                selectedSize 
-                                    ? 'bg-[#FED685] hover:bg-[#ffb82b] cursor-pointer' 
-                                    : 'bg-gray-200 cursor-not-allowed'
-                            }`}
-                            disabled={!selectedSize}
+                            className={`mt-8 w-full px-10 py-3 text-[#131313] capitalize rounded-full font-Albula-Regular text-lg transition-all duration-300 ${buttonState.className}`}
+                            disabled={buttonState.disabled}
+                            onClick={() => buttonState.disabled ? null : handlePurchase()}
                         >
-                            {selectedSize ? 'Buy Now' : 'Select a size to continue'}
+                            {buttonState.text}
                         </button>
 
                         <div className="mt-6 mb-6 font-Albula-Bold">

@@ -10,11 +10,27 @@ const Contact = () => {
         message: ""
     });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form data submitted:', formData);
-        setFormData({ firstName: "", lastName: "", email: "", message: "" });
-        alert('Message logged to console!');
+        try {
+            const response = await fetch('http://localhost:5000/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to send message');
+            }
+
+            setFormData({ firstName: "", lastName: "", email: "", message: "" });
+            alert('Thank you for your message! We will get back to you soon.');
+        } catch (error) {
+            console.error('Error sending message:', error);
+            alert('Failed to send message. Please try again.');
+        }
     };
 
     const handleChange = (e) => {
@@ -27,7 +43,7 @@ const Contact = () => {
     };
 
     return (
-        <main className="relative pt-[100px] px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 min-h-screen">
+        <main className="relative pt-[100px] px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 flex flex-row justify-center items-center min-h-screen">
             <div className="max-w-[1000px] mx-auto">
                 <motion.div 
                     className="bg-white rounded-2xl p-8 mb-8"
