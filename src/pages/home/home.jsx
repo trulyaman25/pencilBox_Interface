@@ -2,11 +2,14 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import { Link, NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { FaInstagram, FaFacebookF, FaSnapchat, FaYoutube } from 'react-icons/fa';
+
 import LandingBackdrop from '/landingBackground.jpg';
 import CustomPortrait from '/products/custom_photo/Custom_Photo_1.jpg';
 import LeafageArtOne from '/products/leafage_art/Leafage_Art_1.jpg';
 import LeafageArtTwo from '/products/leafage_art/Leafage_Art_2.jpg';
 import LeafageArtThree from '/products/leafage_art/Leafage_Art_3.jpeg';
+import SahilNigam from '/teamMembers/Sahil_Nigam.jpg';
 import productsData from '../../data/products.json';
 
 function Home() {
@@ -147,6 +150,51 @@ function Home() {
                                     </div>
                                 </motion.div>
                             ))}
+                        </div>
+                    </motion.div>
+                </section>
+                
+                <section id="aboutUs">
+                    <div className='w-full p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 bg-[#43806c]'>
+                        <div className='text-3xl lg:text-4xl font-Albula-Heavy text-white text-center'>
+                            The Artistic Genius Behind PencilBox!
+                        </div>
+                    </div>
+
+                    <motion.div className="w-full xl:h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 my-10" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
+                        <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-between items-center">
+                            <div className="h-full sm:w-[500px] lg:w-[50%] flex flex-col justify-center items-center sm:items-start mt-10 sm:mt-20">
+                                <h1 className="font-Albula-Heavy text-3xl sm:text-4xl xl:text-5xl capitalize mb-4"> Sahil Nigam </h1>
+
+                                <motion.p className="text-sm xl:text-lg text-center sm:text-start font-Albula-Regular text-gray-600" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} >
+                                    Sahil Nigam is a talented 24-year-old artist known for his versatility in 
+                                    creating unique and captivating artwork. With a passion for artistic 
+                                    expression, he has built a strong online presence through his YouTube channel, 
+                                    <span className='italic text-[#43806c] hover:cursor-pointer'> 'sahilnigam_art'</span> which boasts 2.4K subscribers and over 556,769 total views. 
+                                    His creativity extends to Instagram, where he engages with a growing community 
+                                    of 2.5K followers. Whether it's intricate sketches or innovative art styles, 
+                                    Sahil’s work reflects his dedication to craftsmanship and storytelling, making 
+                                    him a distinguished name in the art world.
+                                </motion.p>
+
+                                <div className='w-full flex flex-row justify-center sm:justify-start items-center gap-8 mt-10'>
+                                    <a href="https://www.youtube.com/channel/UC5A9Z4mYSwokyyTnW44dJCg" target="_blank" rel="noopener noreferrer">
+                                        <FaYoutube size={26} className='text-[#43806c] hover:text-[#0b5c41] hover:cursor-pointer'/>
+                                    </a>
+
+                                    <a href="https://www.instagram.com/sahilnigam_art/" target="_blank" rel="noopener noreferrer">
+                                        <FaInstagram size={26} className='text-[#43806c] hover:text-[#0b5c41] hover:cursor-pointer'/>
+                                    </a>
+
+                                    <a href="" target="_blank" rel="noopener noreferrer">
+                                        <FaFacebookF size={26} className='text-[#43806c] hover:text-[#0b5c41] hover:cursor-pointer'/>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="max-w-[500px] h-full lg:w-[375px] lg:h-fit xl:w-[500px] xl:h-full">
+                                <img src={SahilNigam} alt="Custom Portrait" className="w-full h-full rounded-3xl object-cover shadow-lg hover:cursor-pointer"/>
+                            </div>
                         </div>
                     </motion.div>
                 </section>
