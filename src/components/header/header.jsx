@@ -92,7 +92,7 @@ function Header() {
     return (
         <>
             <div className="fixed w-full h-[80px] z-10 flex flex-row justify-between items-center py-1 px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 transition-all duration-300 ease-in-out bg-white">
-                <button className="scale-50 lg:hidden" onClick={() => setIsMenuOpen(true)}>
+                <button className="scale-50 xl:hidden" onClick={() => setIsMenuOpen(true)}>
                     <img src={MenuIcon} alt="Navigation Menu Icon" className="w-[50px] h-[50px]" />
                 </button>
 
@@ -102,7 +102,7 @@ function Header() {
                     </Link>
                 </section>
 
-                <section className="hidden lg:flex flex-row justify-center items-center gap-10">
+                <section className="hidden xl:flex flex-row justify-center items-center gap-10">
                     <NavLink to="/" onClick={(e) => handleScroll(e, "home")} className="font-Albula-Medium relative group text-black overflow-hidden">
                         <span className="relative z-10 transition-colors duration-300 group-hover:text-[#43806c]">Home</span>
                         <span className="absolute left-0 bottom-0 w-full h-[1px] bg-[#43806c] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
@@ -113,7 +113,7 @@ function Header() {
                         <span className="absolute left-0 bottom-0 w-full h-[1px] bg-[#43806c] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
                     </NavLink>
 
-                    <NavLink to="#exoticProducts" onClick={(e) => handleScroll(e, "exoticProducts")} className="font-Albula-Medium relative group text-black overflow-hidden">
+                    <NavLink to="#exoticProducts" onClick={(e) => handleScroll(e, "exoticProducts")} className="hidden font-Albula-Medium 2xl:inline relative group text-black overflow-hidden">
                         <span className="relative z-10 transition-colors duration-300 group-hover:text-[#43806c]">Exotic Products</span>
                         <span className="absolute left-0 bottom-0 w-full h-[1px] bg-[#43806c] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
                     </NavLink>
@@ -129,12 +129,12 @@ function Header() {
                     </NavLink>
                 </section>
 
-                <section className="w-[50px] lg:w-[196px] flex flex-row justify-center lg:justify-end items-center gap-7">
+                <section className="w-[50px] xl:w-[196px] flex flex-row justify-center lg:justify-end items-center gap-7">
                     <button className="hover:cursor-pointer transform transition-all duration-300">
                         <img src={userIcon} alt="User Profile Icon" className="w-[25px] h-[25px]"onMouseEnter={() => setUserIcon(UserFilledIcon)}onMouseLeave={() => setUserIcon(UserOutlineIcon)}onClick={handleProfileClick} />
                     </button>
 
-                    <div className="hidden lg:block">
+                    <div className="hidden xl:block">
                         {!isAuthenticated ? (
                             <button onClick={() => loginWithRedirect()} className="font-Albula-Medium relative group hover:text-[#55937e] transition-all duration-300 hover:cursor-pointer text-[#131313] transform" >
                                 Sign In

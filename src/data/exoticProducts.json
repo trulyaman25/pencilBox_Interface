@@ -1,0 +1,80 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Feminine Flow",
+            "description": "A breathtaking portrayal of feminine strength and nature’s beauty, Feminine Flow captures the essence of serenity and connection. The flowing hair, expressive eyes, and vibrant colors bring this artwork to life, making it a perfect statement piece for any space.",
+            "image": "/products/feminine_flow/Feminine_Flow_1.jpg",
+            "actualPrice": 1099,
+            "currentPrice": 599,
+            "category": "portrait",
+            "materials": "High-quality graphite and charcoal on premium sketch paper",
+            "dimensions": "A4 Size (8.3 x 11.7 inches)",
+            "productCare": "Keep away from moisture and direct sunlight. Frame recommended.",
+            "stylingTips": "Best suited for minimalistic or nature-inspired interiors.",
+            "reviews": { "rating": 4.8, "count": 32 },
+            "frameSizes": [
+                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599 },
+                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699 },
+                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899 }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Indomitable Will",
+            "description": "This sketch of Baki Hanma embodies sheer confidence and resilience. A tribute to strength, struggle, and greatness.",
+            "image": "/products/indomitable_will/Indomitable_Will_1.jpg",
+            "actualPrice": 1099,
+            "currentPrice": 599,
+            "category": "portrait",
+            "materials": "Graphite and charcoal on textured paper",
+            "dimensions": "A3 Size (11.7 x 16.5 inches)",
+            "productCare": "Store in a dry place. Avoid touching the surface directly.",
+            "stylingTips": "Perfect for gym spaces or a personal motivation corner.",
+            "reviews": { "rating": 4.7, "count": 25 },
+            "frameSizes": [
+                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599 },
+                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699 },
+                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899 }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Saiyan Rage",
+            "description": "A powerful hand-drawn artwork capturing the raw fury and energy of a legendary warrior.",
+            "image": "/products/saiyan_rage/Saiyan_Rage.jpg",
+            "actualPrice": 1099,
+            "currentPrice": 599,
+            "category": "digital",
+            "materials": "Digital illustration printed on premium art paper",
+            "dimensions": "A2 Size (16.5 x 23.4 inches)",
+            "productCare": "Frame recommended for longevity.",
+            "stylingTips": "Ideal for gaming setups or anime-themed rooms.",
+            "reviews": { "rating": 4.9, "count": 40 },
+            "frameSizes": [
+                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599 },
+                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699 },
+                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899 }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Bal Krishna",
+            "description": "A heartwarming portrayal of divine innocence, capturing the playful charm of Lord Krishna.",
+            "image": "/products/bal_krishna/Bal_Krishna_1.jpg",
+            "actualPrice": 1099,
+            "currentPrice": 599,
+            "category": "portrait",
+            "materials": "Watercolors and ink on handmade paper",
+            "dimensions": "A4 Size (8.3 x 11.7 inches)",
+            "productCare": "Avoid water exposure. Store in a frame for protection.",
+            "stylingTips": "Perfect for puja rooms or spiritual spaces.",
+            "reviews": { "rating": 4.8, "count": 29 },
+            "frameSizes": [
+                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599 },
+                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699 },
+                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899 }
+            ]
+        }
+    ]
+}

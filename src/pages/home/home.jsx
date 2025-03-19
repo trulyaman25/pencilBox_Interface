@@ -10,7 +10,7 @@ import LeafageArtOne from '/products/leafage_art/Leafage_Art_1.jpg';
 import LeafageArtTwo from '/products/leafage_art/Leafage_Art_2.jpg';
 import LeafageArtThree from '/products/leafage_art/Leafage_Art_3.jpeg';
 import SahilNigam from '/teamMembers/Sahil_Nigam.jpg';
-import productsData from '../../data/products.json';
+import exoticProducts from '../../data/exoticProducts.json';
 
 function Home() {
 
@@ -137,17 +137,20 @@ function Home() {
 
                     <motion.div className="w-full min-h-[700px] p-5 sm:px-20 lg:px-28 xl:px-36 2xl:px-48 xl:p-10 mt-16" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
                         <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
-                        {productsData.products.map((product) => (
-                                <motion.div key={product.id} className="group relative bg-white overflow-hidden transition-all hover:cursor-pointer" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>                                <div className='w-full max-h-[400px] overflow-hidden'>
-                                        <img src={product.image} alt={product.name} className="w-full max-h-[400px] object-cover transition-transform duration-300 group-hover:scale-102" />
-                                    </div>
-
-                                    <h1 className='font-GoogleSans-Medium text-xl mt-7'>{product.name}</h1>
+                        {exoticProducts.products.map((product) => (
+                                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }} >
+                                    <NavLink to={`/product/${product.id}`} key={product.id} className="group relative bg-white overflow-hidden transition-all hover:cursor-pointer" >
+                                        <div className="w-full max-h-[400px] overflow-hidden">
+                                            <img src={product.image} alt={product.name} className="w-full max-h-[400px] object-cover transition-transform duration-300 group-hover:scale-105" />
+                                        </div>
                                     
-                                    <div>
-                                        <span className='font-GoogleSans-Medium text-gray-400 line-through mr-4'>₹ {product.actualPrice}</span>
-                                        <span className='font-GoogleSans-Medium text-gray-800'>₹ {product.currentPrice}</span>
-                                    </div>
+                                        <h1 className="font-GoogleSans-Medium text-xl mt-7">{product.name}</h1>
+                                    
+                                        <div>
+                                            <span className="font-GoogleSans-Medium text-gray-400 line-through mr-4"> ₹ {product.actualPrice} </span>
+                                            <span className="font-GoogleSans-Medium text-gray-800"> ₹ {product.currentPrice} </span>
+                                        </div>
+                                    </NavLink>
                                 </motion.div>
                             ))}
                         </div>
