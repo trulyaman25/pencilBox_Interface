@@ -4,7 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import '../../globalStyles.css';
 
 const Profile = () => {
-    const { user, isAuthenticated } = useAuth0();
+    const { user, isAuthenticated, isLoading } = useAuth0();
 
     const [activeTab, setActiveTab] = useState('personal');
     const [isEditing, setIsEditing] = useState(false);
@@ -270,15 +270,45 @@ const Profile = () => {
         </div>
     );
 
+    if (isLoading) {
+        return (
+            <main className="relative pt-[100px] px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 min-h-screen">
+                <div className="max-w-[1000px] mx-auto">
+                    <div className="bg-white rounded-2xl p-8 mb-2">
+                        <p className="text-center text-gray-500">Loading profile...</p>
+                    </div>
+                </div>
+            </main>
+        );
+    }
+
+    if (!isAuthenticated || !user) {
+        return (
+            <main className="relative pt-[100px] px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 min-h-screen">
+                <div className="max-w-[1000px] mx-auto">
+                    <div className="bg-white rounded-2xl p-8 mb-2">
+                        <p className="text-center text-gray-500">Please log in to view your profile.</p>
+                    </div>
+                </div>
+            </main>
+        );
+    }
+
     return (
         <main className="relative pt-[100px] px-5 md:px-8 lg:px-10 xl:px-36 2xl:px-48 min-h-screen">
             <div className="max-w-[1000px] mx-auto">
                 <div className="bg-white rounded-2xl p-8 mb-2">
                     <div className="flex items-center justify-center border-b pb-6">
                         <div className="flex items-center gap-6">
-                            <img src={user.picture} alt={user?.name} className="w-20 h-20 rounded-full object-cover border-2 border-[#43806c]" />
+                            <img 
+                                src={user?.picture || 'https://via.placeholder.com/80'} 
+                                alt={user?.name || 'Profile'} 
+                                className="w-20 h-20 rounded-full object-cover border-2 border-[#43806c]" 
+                            />
                             <div>
-                                <h1 className="text-2xl font-Albula-Heavy text-gray-800"> {user.given_name} {user.family_name} </h1>
+                                <h1 className="text-2xl font-Albula-Heavy text-gray-800">
+                                    {user?.given_name || ''} {user?.family_name || user?.name || 'User'}
+                                </h1>
                             </div>
                         </div>
                     </div>
