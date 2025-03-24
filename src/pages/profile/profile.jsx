@@ -204,6 +204,14 @@ const Profile = () => {
         setIsEditing(!isEditing);
     };
 
+    const handleTabChange = (tab) => {
+        if (tab === 'orders') {
+            window.location.href = '/orders';
+        } else {
+            setActiveTab(tab);
+        }
+    };
+
     const personalDetails = [
         { label: "First Name", name: "firstName", type: "text", placeholder: "Enter your first name" },
         { label: "Last Name", name: "lastName", type: "text", placeholder: "Enter your last name" },
@@ -279,7 +287,7 @@ const Profile = () => {
                         {['personal', 'orders'].map((tab) => (
                             <button
                                 key={tab}
-                                onClick={() => setActiveTab(tab)}
+                                onClick={() => handleTabChange(tab)}
                                 className={`px-5 py-2 font-Albula-Medium hover:cursor-pointer text-sm transition-all duration-300 border-b-2
                                     ${activeTab === tab 
                                         ? 'border-[#43806c] text-[#43806c]' 

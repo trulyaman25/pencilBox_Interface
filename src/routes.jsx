@@ -6,6 +6,7 @@ import Home from "./pages/home/home";
 import Profile from "./pages/profile/profile";
 import Contact from "./pages/contact/contact";
 import Products from "./pages/products/products";
+import Orders from "./pages/orders/orders";
 
 function RoutesApp() {
 	return (
@@ -24,6 +25,7 @@ function MainRoutes() {
 			<Route path="/" element={<Home />} />
 			<Route path="/product/:productID" element={<Products />} />
 			<Route path="/profile" element={<Profile />}/>
+			<Route path="/orders" element={<Orders />}/>
 			<Route path="/contact" element={<Contact />}/>
 		</Routes>
 	);
