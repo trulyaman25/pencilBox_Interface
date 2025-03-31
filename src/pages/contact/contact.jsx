@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa';
+import SuccessModal from '../../components/SuccessModal';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ const Contact = () => {
         email: "",
         message: ""
     });
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,7 +28,7 @@ const Contact = () => {
             }
 
             setFormData({ firstName: "", lastName: "", email: "", message: "" });
-            alert('Thank you for your message! We will get back to you soon.');
+            setShowSuccessModal(true);
         } catch (error) {
             console.error('Error sending message:', error);
             alert('Failed to send message. Please try again.');
@@ -119,7 +121,7 @@ const Contact = () => {
 
                         <button
                             type="submit"
-                            className="w-full px-6 py-3 bg-[#43806c] text-white rounded-xl font-Albula-Medium 
+                            className="w-full px-6 py-3 cursor-pointer bg-[#43806c] text-white rounded-xl font-Albula-Medium 
                             hover:bg-[#376857] transition-all duration-300"
                         >
                             Send Message
@@ -147,6 +149,13 @@ const Contact = () => {
                     </div>
                 </motion.div>
             </div>
+
+            <SuccessModal 
+                isOpen={showSuccessModal}
+                onClose={() => setShowSuccessModal(false)}
+                title="Message Sent!"
+                message="Thank you for your message. We will get back to you soon."
+            />
         </main>
     );
 };
