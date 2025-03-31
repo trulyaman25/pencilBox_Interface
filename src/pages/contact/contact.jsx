@@ -39,7 +39,6 @@ const Contact = () => {
             ...prev,
             [name]: value
         }));
-        console.log('Field updated:', name, value);
     };
 
     return (

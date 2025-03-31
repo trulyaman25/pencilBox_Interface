@@ -11,11 +11,15 @@ import LeafageArtTwo from '/products/leafage_art/Leafage_Art_2.jpg';
 import LeafageArtThree from '/products/leafage_art/Leafage_Art_3.jpeg';
 import SahilNigam from '/teamMembers/Sahil_Nigam.jpg';
 import exoticProducts from '../../data/exoticProducts.json';
+import BookCallModal from '../../components/BookCallModal';
+import SuccessModal from '../../components/SuccessModal';
 
 function Home() {
 
     const [index, setIndex] = useState(0);
     const images = [LeafageArtOne, LeafageArtTwo, LeafageArtThree];
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -35,6 +39,14 @@ function Home() {
                 behavior: "smooth"
             });
         }
+    };
+
+    const handleBookingSuccess = () => {
+        setShowSuccess(true);
+        // Auto close after 5 seconds unless closed manually
+        setTimeout(() => {
+            setShowSuccess(false);
+        }, 5000);
     };
 
     return (
@@ -57,7 +69,10 @@ function Home() {
                                     <NavLink onClick={handleProductClick} className="text-white text-md md:text-xl border-2 capitalize border-[#43806c] px-8 py-2 md:px-12 md:py-4 bg-[#43806c] hover:bg-[#379a79] hover:text-white text-center text-md font-Albula-Regular transition-all ease-in-out hover:cursor-pointer rounded-full">
                                         Shop Premium
                                     </NavLink>
-                                    <NavLink className="text-white sm:text-black text-md md:text-xl border-2 capitalize border-[#43806c] px-8 py-2 md:px-12 md:py-4 hover:bg-[#43806c] hover:text-white text-center text-md font-Albula-Regular transition-all ease-in-out hover:cursor-pointer rounded-full">
+                                    <NavLink 
+                                        onClick={() => setIsModalOpen(true)} 
+                                        className="text-white sm:text-black text-md md:text-xl border-2 capitalize border-[#43806c] px-8 py-2 md:px-12 md:py-4 hover:bg-[#43806c] hover:text-white text-center text-md font-Albula-Regular transition-all ease-in-out hover:cursor-pointer rounded-full"
+                                    >
                                         Book a Call
                                     </NavLink>
                                 </div>
@@ -202,6 +217,16 @@ function Home() {
                     </motion.div>
                 </section>
             </main>
+
+            <BookCallModal 
+                isOpen={isModalOpen} 
+                onClose={() => setIsModalOpen(false)} 
+                onSuccess={handleBookingSuccess}
+            />
+            <SuccessModal 
+                isOpen={showSuccess} 
+                onClose={() => setShowSuccess(false)} 
+            />
         </>
     );
 }

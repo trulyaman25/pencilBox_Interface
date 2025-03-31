@@ -22,10 +22,11 @@ const ProductDetail = () => {
         const checkUserProfile = async () => {
             if (isAuthenticated && user?.sub) {
                 try {
-                    const response = await fetch(`/api/users/${user.sub}`);
+                    const response = await fetch(`http://localhost:5000/api/profile/${user.sub}`);
                     const data = await response.json();
                     setUserExists(true);
                     setProfileCompleted(data.profileCompleted);
+                    console.log(data);
                 } catch (error) {
                     setUserExists(false);
                     setProfileCompleted(false);
@@ -46,6 +47,12 @@ const ProductDetail = () => {
         };
         fetchProduct();
     }, [productID]);
+
+    const handlePurchase = () => {
+        if (selectedSize && selectedSize.purchaseLink) {
+            window.location.href = selectedSize.purchaseLink;
+        }
+    };
 
     if (loading) return <h2 className="text-center p-4">Loading...</h2>;
 
@@ -162,6 +169,7 @@ const ProductDetail = () => {
                         )}
 
                         <button 
+                            id="buyButton"
                             className={`mt-8 w-full px-10 py-3 text-[#131313] capitalize rounded-full font-Albula-Regular text-lg transition-all duration-300 ${buttonState.className}`}
                             disabled={buttonState.disabled}
                             onClick={() => buttonState.disabled ? null : handlePurchase()}

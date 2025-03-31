@@ -256,19 +256,39 @@ const Profile = () => {
                     </span>
                 )}
             </div>
+
             {errors[field.name] && (
                 <p className="text-red-500 text-xs mt-1">{errors[field.name]}</p>
             )}
+
             {isEditing && 
-             field.name === 'username' && 
-             usernameAvailable && 
-             formData.username && 
-             !errors.username &&
-             formData.username !== formData.originalUsername && (
+                field.name === 'username' && usernameAvailable && formData.username && !errors.username &&formData.username !== formData.originalUsername && (
                 <p className="text-green-500 text-xs mt-1">Username is available</p>
             )}
         </div>
     );
+
+    const renderActionButton = () => {
+        if (isEditing) {
+            return (
+                <div className="flex gap-3 w-full mt-10">
+                    <button onClick={() => setIsEditing(false)} className="cursor-pointer flex-1 px-6 py-3 border-2 border-[#43806c] text-[#43806c] rounded-xl hover:bg-rose-50 hover:border-rose-400 hover:text-rose-500 font-Albula-Medium  transition-all duration-300 active:scale-95" >
+                        Cancel
+                    </button>
+
+                    <button onClick={handleSave} className="cursor-pointer flex-1 px-6 py-3 bg-[#43806c] hover:bg-[#2c5446] text-white rounded-xl font-Albula-Medium transition-all duration-300" >
+                        Save Changes
+                    </button>
+                </div>
+            );
+        }
+
+        return (
+            <button onClick={handleEditClick} className="cursor-pointer w-full px-6 py-3 bg-[#43806c] hover:bg-[#2c5446] text-white rounded-xl font-Albula-Medium transition-all duration-300">
+                Edit Information
+            </button>
+        );
+    };
 
     if (isLoading) {
         return (
@@ -330,25 +350,18 @@ const Profile = () => {
                 </div>
 
                 {activeTab === 'personal' && (
-                    <div className="bg-white rounded-2xl p-8 mb-20">
+                    <div className="bg-white rounded-2xl py-8 sm:p-8">
                         <div className="relative">
-                            <div className="flex justify-between items-center mb-6">
+                            <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
                                 <div className="flex items-center gap-4">
                                     <h2 className="text-xl font-Albula-Medium text-gray-800">Personal Information</h2>
+
                                     <span className={`px-2 py-1 text-sm rounded-lg ${
-                                        formData.profileCompleted 
-                                            ? 'bg-green-50 font-Albula-Medium text-green-600'
-                                            : 'bg-red-50 font-Albula-Medium text-red-600'
-                                    }`}>
+                                        formData.profileCompleted ? 'bg-green-50 font-Albula-Medium text-green-600': 'bg-red-50 font-Albula-Medium text-red-600' }`}>
                                         {formData.profileCompleted ? 'Profile Completed' : 'Incomplete Profile'}
                                     </span>
+
                                 </div>
-                                <button
-                                    onClick={handleEditClick}
-                                    className="px-4 py-2 font-Albula-Medium text-sm text-[#43806c] hover:text-[#376857] transition-all duration-300"
-                                >
-                                    {isEditing ? 'Cancel' : 'Edit Information'}
-                                </button>
                             </div>
 
                             <div className="space-y-8">
@@ -356,41 +369,20 @@ const Profile = () => {
                                     {personalDetails.map((field, index) => renderInputField(field, index))}
                                 </div>
 
-                                {/* Divider */}
                                 <div className="relative flex py-5 items-center">
-                                    <div class="flex-grow border-t border-gray-200"></div>
+                                    <div className="flex-grow border-t border-gray-200"></div>
                                     <span className="flex-shrink mx-4 text-gray-400 font-Albula-Regular">Delivery Address</span>
                                     <div className="flex-grow border-t border-gray-200"></div>
                                 </div>
 
-                                {/* Address Details Section */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     {addressDetails.map((field, index) => renderInputField(field, index))}
                                 </div>
 
-                                {/* Save Button */}
-                                {isEditing && (
-                                    <div className="pt-4">
-                                        <button 
-                                            onClick={handleSave}
-                                            className="w-full px-6 py-3 bg-[#43806c] text-white rounded-xl font-Albula-Medium 
-                                            hover:bg-[#376857] transition-all duration-300"
-                                        >
-                                            Save Changes
-                                        </button>
-                                    </div>
-                                )}
+                                {renderActionButton()}
                             </div>
-                        </div>
-                    </div>
-                )}
 
-                {activeTab === 'orders' && (
-                    <div className="flex flex-col items-center justify-center py-12">
-                        <p className="text-gray-500 font-Albula-Regular">No orders yet</p>
-                        <button className="px-6 py-2 text-[#43806c] font-Albula-Medium mt-4 hover:text-[#376857]">
-                            Browse Products
-                        </button>
+                        </div>
                     </div>
                 )}
             </div>

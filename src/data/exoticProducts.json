@@ -18,9 +18,9 @@
             "stylingTips": "Best suited for minimalistic or nature-inspired interiors.",
             "reviews": { "rating": 4.8, "count": 32 },
             "frameSizes": [
-                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599 },
-                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699 },
-                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899 }
+                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599, "purchaseLink": "https://rzp.io/rzp/buyFeminineFlowA4" },
+                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699, "purchaseLink": "https://rzp.io/rzp/buyFeminineFlowA3" },
+                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899, "purchaseLink": "https://rzp.io/rzp/buyFeminineFlowA2" }
             ]
         },
         {
@@ -41,9 +41,9 @@
             "stylingTips": "Perfect for gym spaces or a personal motivation corner.",
             "reviews": { "rating": 4.7, "count": 25 },
             "frameSizes": [
-                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599 },
-                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699 },
-                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899 }
+                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599, "purchaseLink": "https://rzp.io/rzp/buyIndomitableWillA4" },
+                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699, "purchaseLink": "https://rzp.io/rzp/buyIndomitableWillA3" },
+                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899, "purchaseLink": "https://rzp.io/rzp/buyIndomitableWillA2" }
             ]
         },
         {
@@ -64,9 +64,9 @@
             "stylingTips": "Ideal for gaming setups or anime-themed rooms.",
             "reviews": { "rating": 4.9, "count": 40 },
             "frameSizes": [
-                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599 },
-                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699 },
-                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899 }
+                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599, "purchaseLink": "https://rzp.io/rzp/buySaiyanRageA4" },
+                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699, "purchaseLink": "https://rzp.io/rzp/buySaiyanRageA3" },
+                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899, "purchaseLink": "https://rzp.io/rzp/buySaiyanRageA2" }
             ]
         },
         {
@@ -87,9 +87,9 @@
             "stylingTips": "Perfect for puja rooms or spiritual spaces.",
             "reviews": { "rating": 4.8, "count": 29 },
             "frameSizes": [
-                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599 },
-                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699 },
-                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899 }
+                { "id": 1, "size": "A4 (8.27\" × 11.69\")", "price": 599, "purchaseLink": "https://rzp.io/rzp/buyBalKrishnaA4" },
+                { "id": 2, "size": "A3 (11.69\" × 16.54\")", "price": 699, "purchaseLink": "https://rzp.io/rzp/buyBalKrishnaA3" },
+                { "id": 3, "size": "A2 (16.54\" × 23.39\")", "price": 899, "purchaseLink": "https://rzp.io/rzp/buyBalKrishnaA2" }
             ]
         }
     ]
