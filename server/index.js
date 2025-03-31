@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
         type: String, 
         required: true, 
         trim: true,
-        unique: true // Make username unique
+        unique: true
     },
     email: { type: String, required: true, trim: true },
     phone: { 
@@ -48,6 +48,61 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User', userSchema);
+
+// Add Booking Schema
+const bookingSchema = new mongoose.Schema({
+    firstName: { type: String, required: true, trim: true },
+    lastName: { type: String, required: true, trim: true },
+    phone: { 
+        type: String, 
+        required: true,
+        match: [/^[0-9]{10}$/, 'Please enter a valid 10-digit phone number']
+    },
+    date: { type: String, required: true }, // Changed from Date to String
+    timeSlot: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now }
+});
+
+const Booking = mongoose.model('Booking', bookingSchema);
+
+// Add Contact Schema
+const contactSchema = new mongoose.Schema({
+    firstName: { type: String, required: true, trim: true },
+    lastName: { type: String, required: true, trim: true },
+    email: { type: String, required: true, trim: true },
+    message: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now }
+});
+
+const Contact = mongoose.model('Contact', contactSchema);
+
+// Add Contact Route
+app.post('/api/contact', async (req, res) => {
+    try {
+        const contactData = new Contact(req.body);
+        await contactData.save();
+        res.status(201).json({ message: 'Message sent successfully' });
+    } catch (error) {
+        if (error.name === 'ValidationError') {
+            return res.status(400).json({ error: 'Please fill all required fields' });
+        }
+        res.status(500).json({ error: 'Failed to send message' });
+    }
+});
+
+// Add Booking Route
+app.post('/api/booking', async (req, res) => {
+    try {
+        const bookingData = new Booking(req.body);
+        await bookingData.save();
+        res.status(201).json({ message: 'Booking successful' });
+    } catch (error) {
+        if (error.name === 'ValidationError') {
+            return res.status(400).json({ error: 'Please fill all required fields correctly' });
+        }
+        res.status(500).json({ error: 'Failed to book call' });
+    }
+});
 
 const validateMandatoryFields = (userData) => {
     const mandatoryFields = [
