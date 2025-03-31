@@ -10,7 +10,7 @@ const root = createRoot(document.getElementById('root'));
 root.render(
 	<Auth0Provider
 		domain="pencilboxstudio.us.auth0.com"
-		clientId="NI1cXKIx1JNoMs9dBnBCePYhhLnoGbZP"
+		clientId="KlemCfDavvzW3GAPknVV5KOfGyPGD0or"
 		authorizationParams={{
 			redirect_uri: window.location.origin
 		}}

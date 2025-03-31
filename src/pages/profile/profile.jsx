@@ -33,7 +33,7 @@ const Profile = () => {
             if (user?.sub) {
                 console.log('Fetching profile for auth0Id:', user.sub);
                 try {
-                    const response = await fetch(`http://localhost:5000/api/profile/${user.sub}`);
+                    const response = await fetch(`https://pencilbox-server.onrender.com/api/profile/${user.sub}`);
                     if (!response.ok) {
                         throw new Error('Failed to fetch profile data');
                     }
@@ -107,7 +107,7 @@ const Profile = () => {
         setCheckingUsername(true);
         try {
             const response = await fetch(
-                `http://localhost:5000/api/check-username/${username}?auth0Id=${user.sub}`
+                `https://pencilbox-server.onrender.com/api/check-username/${username}?auth0Id=${user.sub}`
             );
             const data = await response.json();
             setUsernameAvailable(data.available || data.currentUser);
@@ -172,7 +172,7 @@ const Profile = () => {
                 return;
             }
 
-            const response = await fetch('http://localhost:5000/api/profile', {
+            const response = await fetch('https://pencilbox-server.onrender.com/api/profile', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

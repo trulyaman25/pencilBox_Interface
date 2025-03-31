@@ -13,7 +13,7 @@ const Orders = () => {
         const fetchUserProfile = async () => {
             if (user?.sub) {
                 try {
-                    const response = await fetch(`http://localhost:5000/api/profile/${user.sub}`);
+                    const response = await fetch(`https://pencilbox-server.onrender.com/api/profile/${user.sub}`);
                     if (!response.ok) throw new Error('Failed to fetch profile data');
                     const data = await response.json();
                     setFormData(prev => ({

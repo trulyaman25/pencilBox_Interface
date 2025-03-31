@@ -22,7 +22,7 @@ const ProductDetail = () => {
         const checkUserProfile = async () => {
             if (isAuthenticated && user?.sub) {
                 try {
-                    const response = await fetch(`http://localhost:5000/api/profile/${user.sub}`);
+                    const response = await fetch(`https://pencilbox-server.onrender.com/api/profile/${user.sub}`);
                     const data = await response.json();
                     setUserExists(true);
                     setProfileCompleted(data.profileCompleted);
