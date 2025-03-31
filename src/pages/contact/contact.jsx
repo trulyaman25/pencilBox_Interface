@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaYoutube, FaSpinner } from 'react-icons/fa';
 import SuccessModal from '../../components/SuccessModal';
 
 const Contact = () => {
@@ -11,9 +11,11 @@ const Contact = () => {
         message: ""
     });
     const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         try {
             const response = await fetch('https://pencilbox-server.onrender.com/api/contact', {
                 method: 'POST',
@@ -32,6 +34,8 @@ const Contact = () => {
         } catch (error) {
             console.error('Error sending message:', error);
             alert('Failed to send message. Please try again.');
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -121,10 +125,19 @@ const Contact = () => {
 
                         <button
                             type="submit"
+                            disabled={isLoading}
                             className="w-full px-6 py-3 cursor-pointer bg-[#43806c] text-white rounded-xl font-Albula-Medium 
-                            hover:bg-[#376857] transition-all duration-300"
+                            hover:bg-[#376857] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed 
+                            active:scale-95 flex items-center justify-center gap-2"
                         >
-                            Send Message
+                            {isLoading ? (
+                                <>
+                                    <FaSpinner className="animate-spin" />
+                                    <span>Sending...</span>
+                                </>
+                            ) : (
+                                'Send Message'
+                            )}
                         </button>
                     </form>
                 </motion.div>
